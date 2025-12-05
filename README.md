@@ -245,92 +245,35 @@ success response
         "username": "Kusuma",
         "email": "kusuma7dev@gmail.com",
         "avatar": "",
-        "gender": "prefer_not_to_say",
-        "dateOfBirth": null,
-        "address": "",
+        "gender": "female",
+        "dateOfBirth": "2001-05-10T00:00:00.000Z",
+        "address": "Jupudi,Amaravati,Guntur,AP-522436",
         "onlineStatus": "online",
         "lastSeen": "2025-12-05T11:42:28.954Z",
         "createdAt": "2025-12-05T11:04:48.214Z",
-        "updatedAt": "2025-12-05T14:11:30.695Z",
+        "updatedAt": "2025-12-05T17:20:07.731Z",
         "__v": 0
     }
 }
 ```
 
-🔁 Reset Password
-### 7.`POST /api/v1/users/reset-password`
-Description: Resets the password using OTP sent to the user’s email.
+### 10. `PUT /https://api.ayrene.com/api/users/status`
 
-📤 Request Body
-```json
-
-{
-  "email": "user@example.com",
-  "otp": "123456",
-  "new_password": "YourNewPassword123"
-}
-✅ Response
-{
-  "message": "Password reset successful."
-}
-❌ Errors
-400 Bad Request: OTP expired or invalid
-
-404 Not Found: Email not found
-```
-❌ Delete User
-### 8.`DELETE /api/v1/users/deleteuser/{user_id}`
-Description: Deletes a user by their numeric ID.
-🛠️ Example
-DELETE /deleteuser/3
-```json
-✅ Response
-{
-  "msg": "User deleted successfully"
-}
-❌ Errors
-404 Not Found: User not found
-
-500 Internal Server Error: Failed to delete user
-```
-
-## PayPal Subscription API Documentation
-## Base URL: /api/v1/paypal
-
-Authentication
-Uses Bearer Token with JWT for authentication.
-
-Include header:
-Authorization: Bearer <your_jwt_token>
-
-Endpoints
-### 1. Create Order
-Create a new PayPal order for a subscription plan.
-## POST /api/v1/paypal/create-order
-Request Body:
-
-Field	Type	Description
-## plan_type	string	Subscription plan type. Valid values: WEEKLY, MONTHLY, YEARLY
-
-Response:
+Requires a body as ID and Status and authentication bearer with valid tocken 
 
 ```json
+{
+ 
+     "_id": "6932bc503d76faaaee7b413e",
+     "status": "online"
+}
+
+success response
 
 {
-  "user_id": 6,
-  "order_id": "6M221011BR243213T",
-  "status": "CREATED",
-  "approval_link": "https://www.paypal.com/checkoutnow?token=6M221011BR243213T",
-  "display_currency": "INR",
-  "display_amount": 466.98,
-  "charged_currency": "GBP",
-  "charged_amount": 3.99
+     "message": "Status updated successfully",
+    "status": "online"
 }
-display_currency and display_amount: currency and price displayed to the user (converted based on user's country).
-
-charged_currency and charged_amount: currency and amount charged on PayPal (typically GBP).
-
-approval_link: URL to redirect user to PayPal checkout.
 ```
 
-### 2. Capture Order
+
