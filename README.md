@@ -194,21 +194,69 @@ success response
         }
     ]
 }
-###  5.`POST /api/v1/users/forgot-password`
-Description: Send an OTP to the registered email for password reset.
+```
+### 7. `Get /https://api.ayrene.com/api/users/profile`
 
-📤 Request Body
+Requires an ID and authentication bearer with valid tocken 
+
 ```json
 {
-  "email": "user@example.com"
+   "_id": "6932bc503d76faaaee7b413e"
 }
-✅ Response
+
+success response
+
 {
-  "message": "OTP sent to your email for password reset."
+    "message": "Profile updated successfully",
+    "user": {
+        "_id": "6932bc503d76faaaee7b413e",
+        "username": "Kusuma",
+        "email": "kusuma7dev@gmail.com",
+        "avatar": "",
+        "gender": "prefer_not_to_say",
+        "dateOfBirth": null,
+        "address": "",
+        "onlineStatus": "online",
+        "lastSeen": "2025-12-05T11:42:28.954Z",
+        "createdAt": "2025-12-05T11:04:48.214Z",
+        "updatedAt": "2025-12-05T14:11:30.695Z",
+        "__v": 0
+    }
 }
-❌ Errors
-404 Not Found: Email not registered
 ```
+
+### 8. `PUT /https://api.ayrene.com/api/users/profile`
+
+Requires an ID and authentication bearer with valid tocken 
+
+```json
+{
+  "username": "Kusuma",
+  "gender": "female",
+  "dateOfBirth": "2001-05-10",
+  "address": "Jupudi,Amaravati,Guntur,AP-522436"
+}
+success response
+
+{
+    "message": "Profile updated successfully",
+    "user": {
+        "_id": "6932bc503d76faaaee7b413e",
+        "username": "Kusuma",
+        "email": "kusuma7dev@gmail.com",
+        "avatar": "",
+        "gender": "prefer_not_to_say",
+        "dateOfBirth": null,
+        "address": "",
+        "onlineStatus": "online",
+        "lastSeen": "2025-12-05T11:42:28.954Z",
+        "createdAt": "2025-12-05T11:04:48.214Z",
+        "updatedAt": "2025-12-05T14:11:30.695Z",
+        "__v": 0
+    }
+}
+```
+
 🔁 Reset Password
 ### 7.`POST /api/v1/users/reset-password`
 Description: Resets the password using OTP sent to the user’s email.
