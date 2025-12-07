@@ -276,4 +276,59 @@ success response
 }
 ```
 
+### 12. `POST /https://api.ayrene.com/api/messages/send`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+```json
+{
+  "receiverId": "69240122e0963acdc6f09361",
+  "content": "Hello John"
+}
+
+success response
+{
+"message": {
+        "sender": {
+            "_id": "6932bc503d76faaaee7b413e",
+            "username": "Kusuma",
+            "avatar": ""
+        },
+        "receiver": {
+            "_id": "69240122e0963acdc6f09361",
+            "username": "John",
+            "avatar": ""
+        },
+        "content": "Hello John",
+        "messageType": "text",
+        "fileUrl": null,
+        "fileName": null,
+        "fileSize": null,
+        "status": "sent",
+        "deliveredAt": null,
+        "readAt": null,
+        "isDeleted": false,
+        "deletedAt": null,
+        "_id": "6935ce203d76faaaee7b4191",
+        "createdAt": "2025-12-07T18:57:36.609Z",
+        "updatedAt": "2025-12-07T18:57:36.609Z",
+        "__v": 0
+    }
+}
+```
+
+### 12. `PUT /https://api.ayrene.com/api/messages/mark-read/69240122e0963acdc6f09361`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+```json
+{
+    "content": "Hello John"
+}
+
+success response
+{
+    "message": "Messages marked as read"
+}
+```
 
