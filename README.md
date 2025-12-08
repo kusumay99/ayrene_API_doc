@@ -401,13 +401,11 @@ Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 
+
+success response
 {
     "messages": [],
     "conversation": "6935d29c3d76faaaee7b41a0"
-}
-success response
-{
-    "message": "Messages marked as read"
 }
 ```
 
@@ -420,15 +418,15 @@ Request body
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
-
-```json
-
 Body → form-data
 
 | KEY            | VALUE → What you enter     | TYPE |
 | -------------- | -------------------------- | ---- |
 | **file**       | (choose file)              | File |
 | **receiverId** | `69240122e0963acdc6f09361` | Text |
+
+
+```json
 
 success response
 
