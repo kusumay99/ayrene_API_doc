@@ -16,7 +16,6 @@ https://api.ayrene.com
 
  ### 1. `post /https://api.ayrene.com/api/auth/register` — Register User
 
-Requires user credentials
 
 Request Body
 ```json
@@ -102,7 +101,7 @@ Successful Response
 
 ### 4. `Get /https://api.ayrene.com/api/auth/me`
 
-Request a body
+Request body
 #### 🔸 Headers
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
@@ -136,7 +135,7 @@ success response
 
 ### 5. `post /https://api.ayrene.com/api/auth/logout`
 
-Request a body
+Request body
 ```json
 {
   "email": "kusuma7dev@gmail.com",
@@ -196,20 +195,14 @@ success response
     ]
 }
 ```
-### 2. `PUT /https://api.ayrene.com/api/users/profile`
+### 2. `GET /https://api.ayrene.com/api/users/6932bc503d76faaaee7b413e`
 
 Requires an ID and authentication bearer with valid tocken 
-
-Request Body
 
 🔸 Headers
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
-{
-   "_id": "6932bc503d76faaaee7b413e"
-}
-
 success response
 
 {
@@ -334,7 +327,7 @@ success response
 }
 ```
 
-### 2. `PUT /https://api.ayrene.com/api/messages/mark-read/69240122e0963acdc6f09361`
+### 2. `PUT /https://api.ayrene.com/api/messages/mark-read/6935ce203d76faaaee7b4191`
 
 Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
 
@@ -369,28 +362,6 @@ Authorization: Bearer <JWT_ACCESS_TOKEN>
     "messages": [],
     "conversation": "6935d29c3d76faaaee7b41a0"
 }
-success response
-{
-    "message": "Messages marked as read"
-}
-```
-
-### 4. `GET /https://api.ayrene.com/api/messages/send-file`
-
-Requires a body as Reciver ID & Content and   authentication bearer with valid tocken 
-
-#### 🔸 Headers
-
-Authorization: Bearer <JWT_ACCESS_TOKEN>
-{
-    "messages": [],
-    "conversation": "6935d29c3d76faaaee7b41a0"
-}
-```json
-{
-    Body not required
-}
-
 success response
 {
     "message": "Messages marked as read"
@@ -519,8 +490,6 @@ success response
 
 ### 4. `GET /https://api.ayrene.com/api/posts/my-posts`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
-
 #### 🔸 Headers
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
@@ -579,8 +548,6 @@ success response
 
 ### 5. `PUT /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
-
 #### 🔸 Headers
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
@@ -628,17 +595,11 @@ success response
 
 ### 6. `GET /https://api.ayrene.com/api/posts`
 
-Requires authentication bearer with valid tocken 
-
 #### 🔸 Headers
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
-{
-  Do not required any body content
-}
-
 success response
 {
     "success": true,
@@ -699,10 +660,6 @@ Requires authentication bearer with valid tocken
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
-{
-  Do not required any body content
-}
-
 success response
 {
     "success": true,
@@ -719,9 +676,6 @@ Requires authentication bearer with valid tocken
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
-{
-  Do not required any body content
-}
 
 success response
 {
