@@ -86,7 +86,7 @@ Success Response
 ```
 ### 3. `POST /https://api.ayrene.com/api/auth/refresh` — Refresh Token
 
-Description: By giving refresh token we can get access and request token as well.
+Description: Giving refresh token we can get access and request token as well.
 
 Request Body
 ```json
@@ -105,7 +105,7 @@ Successful Response
 
 ### 4. `GET /https://api.ayrene.com/api/auth/me` - My-profile
 
-Description: We can get our profile details by giving Access token.
+Description: Get our profile details by giving Access token.
 
 Request body
 #### 🔸 Headers
