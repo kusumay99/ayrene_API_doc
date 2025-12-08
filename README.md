@@ -372,7 +372,8 @@ Description: Reading a mesage through reciver_id.
 
 Request Body
 
-🔸 Headers
+#### 🔸 Headers
+
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
