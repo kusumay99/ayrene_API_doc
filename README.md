@@ -14,6 +14,7 @@ https://api.ayrene.com
 
 ## Authentication API Documentation
 
+
  ### 1. `POST /https://api.ayrene.com/api/auth/register` — Register User
 
 Description: Register user by using Email, Password & username.
@@ -159,6 +160,7 @@ success response
 ```
 
 ## Users API Documentation
+
 
 ### 1. `GET /https://api.ayrene.com/api/users` - Users
 
@@ -320,6 +322,7 @@ success response
 ```
 
 ## Messages API Documentation
+
 
 ### 1. `POST /https://api.ayrene.com/api/messages/send` - Send Message
 
@@ -535,6 +538,7 @@ success response
 ```
 
 ## Posts API Documentation
+
 
 ### 1. `POST /https://api.ayrene.com/api/posts`
 
