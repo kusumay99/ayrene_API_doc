@@ -14,8 +14,9 @@ https://api.ayrene.com
 
 ## Authentication API Documentation
 
- ### 1. `post /https://api.ayrene.com/api/auth/register` — Register User
+ ### 1. `POST /https://api.ayrene.com/api/auth/register` — Register User
 
+Description: Register user by using Email, Password & username.
 
 Request Body
 ```json
@@ -47,7 +48,9 @@ Success response
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI2ODgsImV4cCI6MTc2NTUzNzQ4OH0.iiU78i81U_E6dUE5G5vabgvavOafJp4KftABsYhT4ZI"
 }
 ```
-### 2. `post /https://api.ayrene.com/api/auth/login`— Log In
+### 2. `POST /https://api.ayrene.com/api/auth/login`— Log In
+
+Description: Login user by using Email, Password & username.
 
 Request Body
 ```json
@@ -81,8 +84,9 @@ Success Response
 }
 
 ```
-### 3. `post /https://api.ayrene.com/api/auth/refresh` — Refresh Token
-Requires a valid credentils
+### 3. `POST /https://api.ayrene.com/api/auth/refresh` — Refresh Token
+
+Description: By giving refresh token we can get access and request token as well.
 
 Request Body
 ```json
@@ -99,7 +103,9 @@ Successful Response
 
 ```
 
-### 4. `Get /https://api.ayrene.com/api/auth/me`
+### 4. `GET /https://api.ayrene.com/api/auth/me` - My-profile
+
+Description: We can get our profile details by giving Access token.
 
 Request body
 #### 🔸 Headers
@@ -133,7 +139,9 @@ success response
 }
 ```
 
-### 5. `post /https://api.ayrene.com/api/auth/logout`
+### 5. `POST /https://api.ayrene.com/api/auth/logout` - Logout
+
+Description: Logout profile by using credentials.
 
 Request body
 ```json
@@ -151,8 +159,10 @@ success response
 ```
 
 ## Users API Documentation
-### 1. `Get /https://api.ayrene.com/api/users`
 
+### 1. `GET /https://api.ayrene.com/api/users` - Users
+
+Description: Getting all users.
 
 🔸 Headers
 Authorization: Bearer <JWT_ACCESS_TOKEN>
@@ -195,9 +205,9 @@ success response
     ]
 }
 ```
-### 2. `GET /https://api.ayrene.com/api/users/6932bc503d76faaaee7b413e`
+### 2. `GET /https://api.ayrene.com/api/users/6932bc503d76faaaee7b413e` - User by ID
 
-Requires an ID and authentication bearer with valid tocken 
+Description: Getting user through the user_id.
 
 🔸 Headers
 Authorization: Bearer <JWT_ACCESS_TOKEN>
@@ -224,9 +234,10 @@ success response
 }
 ```
 
-### 3. `PUT /https://api.ayrene.com/api/users/profile`
+### 3. `PUT /https://api.ayrene.com/api/users/profile` - Update profile
 
-Requires an ID and authentication bearer with valid tocken 
+Description: Updating profile through giving an extra information.
+
 Request Body
 
 🔸 Headers
@@ -260,9 +271,33 @@ success response
 }
 ```
 
-### 4. `PUT /https://api.ayrene.com/api/users/status`
+### 4. `PUT /https://api.ayrene.com/api/users/status` - Giving status
 
-Requires a body as ID and Status and authentication bearer with valid tocken 
+Description: Giving the status to the user .
+
+Request Body
+
+🔸 Headers
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+```json
+{
+ 
+     "_id": "6932bc503d76faaaee7b413e",
+     "status": "online"
+}
+
+success response
+
+{
+     "message": "Status updated successfully",
+    "status": "online"
+}
+```
+
+### 5. `POST /https://api.ayrene.com/api/users/uploads/avatar` - Upload Avatar
+
+Description: Uploading an avatar .
 
 Request Body
 
@@ -285,9 +320,10 @@ success response
 ```
 
 ## Messages API Documentation
-### 1. `POST /https://api.ayrene.com/api/messages/send`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken
+### 1. `POST /https://api.ayrene.com/api/messages/send` - Send Message
+
+Description: Sending a message from sender to reciever.
 
 Request Body
 ```json
@@ -327,9 +363,9 @@ success response
 }
 ```
 
-### 2. `PUT /https://api.ayrene.com/api/messages/mark-read/6935ce203d76faaaee7b4191`
+### 2. `PUT /https://api.ayrene.com/api/messages/mark-read/6935ce203d76faaaee7b4191` - Read Message
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+Description: Reading a mesage through reciver_id.
 
 Request Body
 
@@ -347,9 +383,9 @@ success response
 }
 ```
 
-### 3. `GET /https://api.ayrene.com/api/messages/conversation/6932bc503d76faaaee7b413e`
+### 3. `GET /https://api.ayrene.com/api/messages/conversation/6932bc503d76faaaee7b413e` - Getting conversations
 
-Requires a body as Reciver ID & Content and   authentication bearer with valid tocken 
+Description: Getting conversation by using user_id.
 
 #### 🔸 Headers
 
@@ -368,10 +404,141 @@ success response
 }
 ```
 
+### 4. `Post /https://api.ayrene.com/api/messages/send-file` - Sending File
+
+Description: Send a file to receiver through receiverId.
+
+Request body
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+
+```json
+
+Body → form-data
+
+| KEY            | VALUE → What you enter     | TYPE |
+| -------------- | -------------------------- | ---- |
+| **file**       | (choose file)              | File |
+| **receiverId** | `69240122e0963acdc6f09361` | Text |
+
+success response
+
+{
+    "message": {
+        "sender": {
+            "_id": "6932bc503d76faaaee7b413e",
+            "username": "Kusuma",
+            "avatar": ""
+        },
+        "receiver": {
+            "_id": "69240122e0963acdc6f09361",
+            "username": "John",
+            "avatar": ""
+        },
+        "messageType": "image",
+        "fileUrl": "/uploads/files/1765182418450-3021888-ChatGPT Image Dec 4, 2025, 11_35_14 PM.png",
+        "fileName": "ChatGPT Image Dec 4, 2025, 11_35_14 PM.png",
+        "fileSize": 4630,
+        "status": "sent",
+        "deliveredAt": null,
+        "readAt": null,
+        "isDeleted": false,
+        "deletedAt": null,
+        "_id": "69368bd23d76faaaee7b421b",
+        "createdAt": "2025-12-08T08:26:58.453Z",
+        "updatedAt": "2025-12-08T08:26:58.453Z",
+        "__v": 0
+    }
+}
+```
+
+### 5. `GET /https://api.ayrene.com/api/messages/conversations` - Getting conversation
+
+Description: Getting  all conversations.
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+
+```json
+
+success response
+{
+    "conversations": [
+        {
+            "_id": "6935d29c3d76faaaee7b41a0",
+            "participants": [
+                {
+                    "_id": "6932bc503d76faaaee7b413e",
+                    "username": "Kusuma",
+                    "avatar": "",
+                    "onlineStatus": "online",
+                    "lastSeen": "2025-12-05T11:42:28.954Z"
+                },
+                {
+                    "_id": "69240122e0963acdc6f09361",
+                    "username": "John",
+                    "avatar": "",
+                    "onlineStatus": "online",
+                    "lastSeen": "2025-11-28T09:17:57.701Z"
+                }
+            ],
+            "lastMessage": {
+                "_id": "69368bd23d76faaaee7b421b",
+                "sender": "6932bc503d76faaaee7b413e",
+                "receiver": "69240122e0963acdc6f09361",
+                "messageType": "image",
+                "fileUrl": "/uploads/files/1765182418450-3021888-ChatGPT Image Dec 4, 2025, 11_35_14 PM.png",
+                "fileName": "ChatGPT Image Dec 4, 2025, 11_35_14 PM.png",
+                "fileSize": 4630,
+                "status": "sent",
+                "deliveredAt": null,
+                "readAt": null,
+                "isDeleted": false,
+                "deletedAt": null,
+                "createdAt": "2025-12-08T08:26:58.453Z",
+                "updatedAt": "2025-12-08T08:26:58.453Z",
+                "__v": 0
+            },
+            "unreadCount": {
+                "69240122e0963acdc6f09361": 2,
+                "6932bc503d76faaaee7b413e": 0
+            },
+            "lastMessageAt": "2025-12-08T08:26:58.453Z",
+            "createdAt": "2025-12-07T19:16:44.449Z",
+            "updatedAt": "2025-12-08T08:26:59.039Z",
+            "__v": 0
+        },
+        {
+            "_id": "69362c573d76faaaee7b4207",
+            "participants": [
+                {
+                    "_id": "6932bc503d76faaaee7b413e",
+                    "username": "Kusuma",
+                    "avatar": "",
+                    "onlineStatus": "online",
+                    "lastSeen": "2025-12-05T11:42:28.954Z"
+                }
+            ],
+            "lastMessage": null,
+            "unreadCount": {},
+            "lastMessageAt": "2025-12-08T01:39:35.895Z",
+            "createdAt": "2025-12-08T01:39:35.896Z",
+            "updatedAt": "2025-12-08T01:39:35.896Z",
+            "__v": 0
+        }
+    ]
+}
+```
+
 ## Posts API Documentation
+
 ### 1. `POST /https://api.ayrene.com/api/posts`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+Description: Post a posts.
 
 Request Body
 ```json
@@ -406,7 +573,7 @@ success response
 
 ### 2. `POST /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/like`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+Description: Liking a post by using post_id.
 
 Request Body
 ```json
@@ -459,7 +626,7 @@ success response
 
 ### 3. `POST /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/comment`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+Description: Giving comment a post by using post_id.
 
 Request Body
 ```json
@@ -489,6 +656,8 @@ success response
 ```
 
 ### 4. `GET /https://api.ayrene.com/api/posts/my-posts`
+
+Description: Getting existing post with that login profile.
 
 #### 🔸 Headers
 
@@ -548,13 +717,15 @@ success response
 
 ### 5. `PUT /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
 
+Description: Updating a post by giving an extra information.
+
 #### 🔸 Headers
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 {
-  "content": "Hello Friends a very good morning. A very swwet message fron your friend"
+  "content": "Hello Friends a very good morning. A very sweet message fron your friend"
 }
 
 success response
@@ -594,6 +765,8 @@ success response
 ```
 
 ### 6. `GET /https://api.ayrene.com/api/posts`
+
+Description: Getting all the posts.
 
 #### 🔸 Headers
 
@@ -653,7 +826,7 @@ success response
 
 ### 7. `DELETE /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/comment/693619c33d76faaaee7b41d8`
 
-Requires authentication bearer with valid tocken 
+Description: Deleting comment from the post.
 
 #### 🔸 Headers
 
@@ -669,7 +842,7 @@ success response
 
 ### 9. `DELETE /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
 
-Requires authentication bearer with valid tocken 
+Description: Deleting a post by post_id.
 
 #### 🔸 Headers
 
