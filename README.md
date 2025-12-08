@@ -12,6 +12,8 @@ https://api.ayrene.com
 
 ## 📬 Endpoints Overview
 
+## Authentication API Documentation
+
  ### 1. `post /https://api.ayrene.com/api/auth/register` — Register User
 
 Requires user credentials
@@ -83,7 +85,7 @@ Success Response
 ### 3. `post /https://api.ayrene.com/api/auth/refresh` — Refresh Token
 Requires a valid credentils
 
-Requires a refreshToken
+Request Body
 ```json
 
 {
@@ -100,7 +102,10 @@ Successful Response
 
 ### 4. `Get /https://api.ayrene.com/api/auth/me`
 
-Requires a body and authentication bearer with valid tocken 
+Request a body
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 {
@@ -131,8 +136,7 @@ success response
 
 ### 5. `post /https://api.ayrene.com/api/auth/logout`
 
-Requires a body and authentication bearer with valid tocken 
-
+Request a body
 ```json
 {
   "email": "kusuma7dev@gmail.com",
@@ -147,17 +151,14 @@ success response
 }
 ```
 
-### 6. `Get /https://api.ayrene.com/api/users`
+## Users API Documentation
+### 1. `Get /https://api.ayrene.com/api/users`
 
-Requires an active & valid tocken 
+
+🔸 Headers
+Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
-{
-  "email": "kusuma7dev@gmail.com",
-    "password": "Kusuma@123",
-    "username": "Kusuma"
-}
-
 success response
 {
     "users": [
@@ -195,9 +196,14 @@ success response
     ]
 }
 ```
-### 7. `Get /https://api.ayrene.com/api/users/profile`
+### 2. `PUT /https://api.ayrene.com/api/users/profile`
 
 Requires an ID and authentication bearer with valid tocken 
+
+Request Body
+
+🔸 Headers
+Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 {
@@ -225,9 +231,13 @@ success response
 }
 ```
 
-### 8. `PUT /https://api.ayrene.com/api/users/profile`
+### 3. `PUT /https://api.ayrene.com/api/users/profile`
 
 Requires an ID and authentication bearer with valid tocken 
+Request Body
+
+🔸 Headers
+Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 {
@@ -257,9 +267,14 @@ success response
 }
 ```
 
-### 10. `PUT /https://api.ayrene.com/api/users/status`
+### 4. `PUT /https://api.ayrene.com/api/users/status`
 
 Requires a body as ID and Status and authentication bearer with valid tocken 
+
+Request Body
+
+🔸 Headers
+Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 {
@@ -276,10 +291,12 @@ success response
 }
 ```
 
-### 12. `POST /https://api.ayrene.com/api/messages/send`
+## Messages API Documentation
+### 1. `POST /https://api.ayrene.com/api/messages/send`
 
-Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken
 
+Request Body
 ```json
 {
   "receiverId": "69240122e0963acdc6f09361",
@@ -317,9 +334,14 @@ success response
 }
 ```
 
-### 12. `PUT /https://api.ayrene.com/api/messages/mark-read/69240122e0963acdc6f09361`
+### 2. `PUT /https://api.ayrene.com/api/messages/mark-read/69240122e0963acdc6f09361`
 
 Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+Request Body
+
+🔸 Headers
+Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
 {
@@ -329,6 +351,384 @@ Requires a body as Reciver ID & Content and  authentication bearer with valid to
 success response
 {
     "message": "Messages marked as read"
+}
+```
+
+### 3. `GET /https://api.ayrene.com/api/messages/conversation/6932bc503d76faaaee7b413e`
+
+Requires a body as Reciver ID & Content and   authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+{
+    "messages": [],
+    "conversation": "6935d29c3d76faaaee7b41a0"
+}
+```json
+{
+    Body not required
+}
+
+success response
+{
+    "message": "Messages marked as read"
+}
+```
+
+### 4. `GET /https://api.ayrene.com/api/messages/send-file`
+
+Requires a body as Reciver ID & Content and   authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+{
+    "messages": [],
+    "conversation": "6935d29c3d76faaaee7b41a0"
+}
+```json
+{
+    Body not required
+}
+
+success response
+{
+    "message": "Messages marked as read"
+}
+```
+
+## Posts API Documentation
+### 1. `POST /https://api.ayrene.com/api/posts`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+Request Body
+```json
+{
+  "title": "Morning Whishes",
+  "description": "Whishes",
+  "content": "Hello Friends a very good morning"
+}
+
+success response
+{
+    "success": true,
+    "post": {
+        "title": "Morning Whishes",
+        "content": "Hello Friends a very good morning",
+        "description": "Whishes",
+        "author": {
+            "_id": "6932bc503d76faaaee7b413e",
+            "username": "Kusuma",
+            "avatar": ""
+        },
+        "status": "active",
+        "_id": "693615f43d76faaaee7b41c3",
+        "likes": [],
+        "comments": [],
+        "createdAt": "2025-12-08T00:04:04.487Z",
+        "updatedAt": "2025-12-08T00:04:04.487Z",
+        "__v": 0
+    }
+}
+```
+
+### 2. `POST /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/like`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+Request Body
+```json
+{
+  "title": "Morning Whishes",
+  "description": "Whishes",
+  "content": "Hello Friends a very good morning"
+}
+
+success response
+{
+    "success": true,
+    "post": {
+        "_id": "693615f43d76faaaee7b41c3",
+        "title": "Morning Whishes",
+        "content": "Hello Friends a very good morning",
+        "description": "Whishes",
+        "author": {
+            "_id": "6932bc503d76faaaee7b413e",
+            "username": "Kusuma"
+        },
+        "status": "active",
+        "likes": [
+            {
+                "user": {
+                    "_id": "6932bc503d76faaaee7b413e",
+                    "username": "Kusuma"
+                },
+                "_id": "6936183a3d76faaaee7b41c8",
+                "createdAt": "2025-12-08T00:13:46.916Z"
+            }
+        ],
+        "comments": [],
+        "createdAt": "2025-12-08T00:04:04.487Z",
+        "updatedAt": "2025-12-08T00:13:46.918Z",
+        "__v": 1
+    },
+    "likes": [
+        {
+            "user": {
+                "_id": "6932bc503d76faaaee7b413e",
+                "username": "Kusuma"
+            },
+            "_id": "6936183a3d76faaaee7b41c8",
+            "createdAt": "2025-12-08T00:13:46.916Z"
+        }
+    ]
+}
+```
+
+### 3. `POST /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/comment`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+Request Body
+```json
+{
+  "title": "Morning Whishes",
+  "description": "Whishes",
+  "content": "Hello Friends a very good morning"
+  "text": "Nice Post"
+}
+
+success response
+{
+    "success": true,
+    "comments": [
+        {
+            "user": {
+                "_id": "6932bc503d76faaaee7b413e",
+                "username": "Kusuma",
+                "avatar": ""
+            },
+            "text": "Nice Post",
+            "_id": "693619c33d76faaaee7b41d8",
+            "createdAt": "2025-12-08T00:20:19.160Z"
+        }
+    ]
+}
+```
+
+### 4. `GET /https://api.ayrene.com/api/posts/my-posts`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+```json
+{
+  "email": "kusuma7dev@gmail.com",
+    "password": "Kusuma@123",
+    "username": "Kusuma"
+}
+
+success response
+{
+    "success": true,
+    "posts": [
+        {
+            "_id": "693615f43d76faaaee7b41c3",
+            "title": "Morning Whishes",
+            "content": "Hello Friends a very good morning",
+            "description": "Whishes",
+            "author": {
+                "_id": "6932bc503d76faaaee7b413e",
+                "username": "Kusuma",
+                "avatar": ""
+            },
+            "status": "active",
+            "likes": [
+                {
+                    "user": {
+                        "_id": "6932bc503d76faaaee7b413e",
+                        "username": "Kusuma"
+                    },
+                    "_id": "6936183a3d76faaaee7b41c8",
+                    "createdAt": "2025-12-08T00:13:46.916Z"
+                }
+            ],
+            "comments": [
+                {
+                    "user": {
+                        "_id": "6932bc503d76faaaee7b413e",
+                        "username": "Kusuma",
+                        "avatar": ""
+                    },
+                    "text": "Nice Post",
+                    "_id": "693619c33d76faaaee7b41d8",
+                    "createdAt": "2025-12-08T00:20:19.160Z"
+                }
+            ],
+            "createdAt": "2025-12-08T00:04:04.487Z",
+            "updatedAt": "2025-12-08T00:20:19.161Z",
+            "__v": 2
+        }
+    ]
+}
+```
+
+### 5. `PUT /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
+
+Requires a body as Reciver ID & Content and  authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+```json
+{
+  "content": "Hello Friends a very good morning. A very swwet message fron your friend"
+}
+
+success response
+{
+    "success": true,
+    "post": {
+        "_id": "693615f43d76faaaee7b41c3",
+        "title": "Morning Whishes",
+        "content": "Hello Friends a very good morning. A very swwet message fron your friend",
+        "description": "Whishes",
+        "author": {
+            "_id": "6932bc503d76faaaee7b413e",
+            "username": "Kusuma",
+            "avatar": ""
+        },
+        "status": "active",
+        "likes": [
+            {
+                "user": "6932bc503d76faaaee7b413e",
+                "_id": "6936183a3d76faaaee7b41c8",
+                "createdAt": "2025-12-08T00:13:46.916Z"
+            }
+        ],
+        "comments": [
+            {
+                "user": "6932bc503d76faaaee7b413e",
+                "text": "Nice Post",
+                "_id": "693619c33d76faaaee7b41d8",
+                "createdAt": "2025-12-08T00:20:19.160Z"
+            }
+        ],
+        "createdAt": "2025-12-08T00:04:04.487Z",
+        "updatedAt": "2025-12-08T00:37:35.639Z",
+        "__v": 2
+    }
+}
+```
+
+### 6. `GET /https://api.ayrene.com/api/posts`
+
+Requires authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+```json
+{
+  Do not required any body content
+}
+
+success response
+{
+    "success": true,
+    "posts": [
+        {
+            "_id": "693615f43d76faaaee7b41c3",
+            "title": "Morning Whishes",
+            "content": "Hello Friends a very good morning. A very swwet message fron your friend",
+            "description": "Whishes",
+            "author": {
+                "_id": "6932bc503d76faaaee7b413e",
+                "username": "Kusuma",
+                "avatar": ""
+            },
+            "status": "active",
+            "likes": [
+                {
+                    "user": {
+                        "_id": "6932bc503d76faaaee7b413e",
+                        "username": "Kusuma"
+                    },
+                    "_id": "6936183a3d76faaaee7b41c8",
+                    "createdAt": "2025-12-08T00:13:46.916Z"
+                }
+            ],
+            "comments": [
+                {
+                    "user": {
+                        "_id": "6932bc503d76faaaee7b413e",
+                        "username": "Kusuma",
+                        "avatar": ""
+                    },
+                    "text": "Nice Post",
+                    "_id": "693619c33d76faaaee7b41d8",
+                    "createdAt": "2025-12-08T00:20:19.160Z"
+                }
+            ],
+            "createdAt": "2025-12-08T00:04:04.487Z",
+            "updatedAt": "2025-12-08T00:37:35.639Z",
+            "__v": 2
+        }
+    ],
+    "pagination": {
+        "current": 1,
+        "total": 1,
+        "hasNext": false,
+        "hasPrev": false
+    }
+}
+```
+
+### 7. `DELETE /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/comment/693619c33d76faaaee7b41d8`
+
+Requires authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+```json
+{
+  Do not required any body content
+}
+
+success response
+{
+    "success": true,
+    "message": "Comment deleted successfully"
+}
+```
+
+### 9. `DELETE /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
+
+Requires authentication bearer with valid tocken 
+
+#### 🔸 Headers
+
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+```json
+{
+  Do not required any body content
+}
+
+success response
+{
+    "success": true,
+    "message": "Post deleted successfully"
 }
 ```
 
