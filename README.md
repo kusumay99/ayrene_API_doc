@@ -211,7 +211,8 @@ success response
 
 Description: Getting user through the user_id.
 
-🔸 Headers
+#### 🔸 Headers
+
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
@@ -242,7 +243,8 @@ Description: Updating profile through giving an extra information.
 
 Request Body
 
-🔸 Headers
+#### 🔸 Headers
+
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
@@ -279,7 +281,8 @@ Description: Giving the status to the user .
 
 Request Body
 
-🔸 Headers
+#### 🔸 Headers
+
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
@@ -303,7 +306,7 @@ Description: Uploading an avatar .
 
 Request Body
 
-🔸 Headers
+#### 🔸 Headers
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
