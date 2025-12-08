@@ -362,15 +362,13 @@ Requires a body as Reciver ID & Content and   authentication bearer with valid t
 
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
+
+```json
+
 {
     "messages": [],
     "conversation": "6935d29c3d76faaaee7b41a0"
 }
-```json
-{
-    Body not required
-}
-
 success response
 {
     "message": "Messages marked as read"
