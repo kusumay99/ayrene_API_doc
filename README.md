@@ -166,7 +166,7 @@ success response
 
 Description: Getting all users.
 
-🔸 Headers
+#### 🔸 Headers
 Authorization: Bearer <JWT_ACCESS_TOKEN>
 
 ```json
