@@ -19,6 +19,8 @@ https://api.ayrene.com
 
 Description: Register user by using Email, Password & username.
 
+
+
 Request Body
 ```json
 {
@@ -89,6 +91,13 @@ Success Response
 
 Description: Giving refresh token we can get access and request token as well.
 
+#### 🔸 Headers
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API  
+
+
 Request Body
 ```json
 
@@ -111,7 +120,9 @@ Description: Get our profile details by giving Access token.
 Request body
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -145,6 +156,13 @@ success response
 Description: Logout profile by using credentials.
 
 Request body
+
+#### 🔸 Headers
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
+
 ```json
 {
   "email": "kusuma7dev@gmail.com",
@@ -167,7 +185,11 @@ success response
 Description: Getting all users.
 
 #### 🔸 Headers
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
+
 
 ```json
 success response
@@ -213,7 +235,9 @@ Description: Getting user through the user_id.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 success response
@@ -245,7 +269,9 @@ Request Body
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -283,7 +309,9 @@ Request Body
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -305,9 +333,11 @@ success response
 Description: Uploading an avatar .
 
 Request Body
-
 #### 🔸 Headers
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -377,7 +407,9 @@ Request Body
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -396,8 +428,9 @@ Description: Getting conversation by using user_id.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
 
+#### We can get Access token from Login API 
 
 ```json
 
@@ -416,7 +449,9 @@ Description: Send a file to receiver through receiverId.
 Request body
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 Body → form-data
 
@@ -465,8 +500,9 @@ Description: Getting  all conversations.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
 
+#### We can get Access token from Login API 
 
 ```json
 
@@ -667,7 +703,9 @@ Description: Getting existing post with that login profile.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -727,7 +765,9 @@ Description: Updating a post by giving an extra information.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 {
@@ -776,7 +816,9 @@ Description: Getting all the posts.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 success response
@@ -836,7 +878,9 @@ Description: Deleting comment from the post.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 success response
@@ -852,7 +896,9 @@ Description: Deleting a post by post_id.
 
 #### 🔸 Headers
 
-Authorization: Bearer <JWT_ACCESS_TOKEN>
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
 
 ```json
 
