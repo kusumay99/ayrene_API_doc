@@ -60,8 +60,7 @@ Request Body
 
 {
      "email": "kusuma7dev@gmail.com",
-    "password": "Kusuma@123",
-    "username": "Kusuma"
+    "password": "Kusuma@123"
 }
 
 Success Response
@@ -127,8 +126,7 @@ Request body
 ```json
 {
   "email": "kusuma7dev@gmail.com",
-    "password": "Kusuma@123",
-    "username": "Kusuma"
+    "password": "Kusuma@123"
 }
 
 success response
@@ -153,7 +151,7 @@ success response
 
 ### 5. `POST /https://api.ayrene.com/api/auth/logout` - Logout
 
-Description: Logout profile by using credentials.
+Description: Logout profile by using Access token only.
 
 Request body
 
@@ -164,11 +162,6 @@ Request body
 #### We can get Access token from Login API 
 
 ```json
-{
-  "email": "kusuma7dev@gmail.com",
-    "password": "Kusuma@123",
-    "username": "Kusuma"
-}
 
 success response
 
@@ -231,7 +224,7 @@ success response
 ```
 ### 2. `GET /https://api.ayrene.com/api/users/6932bc503d76faaaee7b413e` - User by ID
 
-Description: Getting user through the user_id.
+Description: Getting user through the user_id along with access token.
 
 #### 🔸 Headers
 
