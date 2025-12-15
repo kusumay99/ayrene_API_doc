@@ -308,8 +308,6 @@ Request Body
 
 ```json
 {
- 
-     "_id": "6932bc503d76faaaee7b413e",
      "status": "online"
 }
 
