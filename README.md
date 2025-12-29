@@ -17,7 +17,7 @@ https://api.ayrene.com
 
  ### 1. `POST /https://api.ayrene.com/api/auth/register` — Register User
 
-Description: Register user by using Email, Password & username.
+Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
 
 
 
@@ -26,7 +26,8 @@ Request Body
 {
    "email": "kusuma7dev@gmail.com",
     "password": "Kusuma@123",
-    "username": "Kusuma"
+    "username": "Kusuma",
+    "profileId": "123"
 }
 
 Success response
@@ -36,6 +37,7 @@ Success response
     "user": {
         "username": "Kusuma",
         "email": "kusuma7dev@gmail.com",
+        "profileId": 123,
         "avatar": "",
         "gender": "prefer_not_to_say",
         "dateOfBirth": null,
@@ -71,6 +73,7 @@ Success Response
         "_id": "6932bc503d76faaaee7b413e",
         "username": "Kusuma",
         "email": "kusuma7dev@gmail.com",
+        "profileId": 123,
         "avatar": "",
         "gender": "prefer_not_to_say",
         "dateOfBirth": null,
@@ -88,7 +91,7 @@ Success Response
 ```
 ### 3. `POST /https://api.ayrene.com/api/auth/refresh` — Refresh Token
 
-Description: Giving refresh token we can get access and request token as well.
+Description: Giving refresh token we can get access and request token as well. We can get accessToken from login end point. By copying from login end point at the header in the authorization section we need to select Bearer Token after that we need to paste access token. 
 
 #### 🔸 Headers
 
