@@ -15,7 +15,7 @@ https://api.ayrene.com
 ## Authentication API Documentation
 
 
- ### 1. `POST /https://api.ayrene.com/api/auth/register` — Register User
+ ### 1. `POST /api/auth/register` — Register User
 
 Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
 
