@@ -91,7 +91,7 @@ Success Response
 ```
 ### 3. `POST /https://api.ayrene.com/api/auth/refresh` — Refresh Token
 
-Description: Giving refresh token we can get access and request token as well. We can get accessToken from login end point. By copying from login end point at the header in the authorization section we need to select Bearer Token after that we need to paste access token. 
+Description: Giving refresh token we can get access and request token as well. We can get accessToken from login end point. By copying from login end point at the header in the authorization section we need to select Bearer Token after that we need to paste access token. Let's coming to body section pick raw body select JSON file paste refresh token as shown in below. After sending request from post man will get success response. 
 
 #### 🔸 Headers
 
@@ -117,7 +117,7 @@ Successful Response
 
 ### 4. `GET /https://api.ayrene.com/api/auth/me` - My-profile
 
-Description: Get our profile details by giving Access token.
+Description: Get our profile details by giving Access token. After getting access Token from login end point we need to give this acces token at the header in the authorization section after selection Bearer token. Let's coming to body section email Id and password is the mandatory feilds. After sending request from postman we will get success response.
 
 Request body
 #### 🔸 Headers
@@ -139,6 +139,7 @@ success response
         "_id": "6932bc503d76faaaee7b413e",
         "username": "Kusuma",
         "email": "kusuma7dev@gmail.com",
+        "profileId": 123,
         "avatar": "",
         "gender": "prefer_not_to_say",
         "dateOfBirth": null,
