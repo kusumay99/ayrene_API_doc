@@ -97,7 +97,8 @@ Request Body
      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI4NTUsImV4cCI6MTc2NTUzNzY1NX0.Lgv1de1PtGPSOrr4sOEaw8PtdZbHCBhO4D46L9n_5vM"
 }
 
-Successful Response 
+Successful Response
+
 {
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzQ1MTgsImV4cCI6MTc2NDkzNTQxOH0.jG2nwrFoQlIu3FfV0V1Wei-ALtftb3iGhfm1I2LPeLk",
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzQ1MTgsImV4cCI6MTc2NTUzOTMxOH0.ntTZUqOzTzKRMefAEkU9zpcYRb8HU4BHZq7vzblu3FM"
@@ -205,7 +206,9 @@ Description: Getting all users.
 
 
 ```json
+
 success response
+
 {
     "users": [
         {
@@ -423,6 +426,7 @@ Request Body
 }
 
 success response
+
 {
 "message": {
         "sender": {
@@ -638,6 +642,7 @@ Description: Getting messages by userId.
 }
 
 success response
+
 {
     "conversations": [
         {
@@ -724,6 +729,7 @@ Request Body
 
 
 success response
+
 {
     "success": true,
     "message": "Messages marked as read"
@@ -747,6 +753,7 @@ Request Body
 }
 
 success response
+
 {
     "success": true,
     "post": {
@@ -782,6 +789,7 @@ Request Body
 }
 
 success response
+
 {
     "success": true,
     "post": {
@@ -836,6 +844,7 @@ Request Body
 }
 
 success response
+
 {
     "success": true,
     "comments": [
@@ -871,6 +880,7 @@ Description: Getting existing post with that login profile.
 }
 
 success response
+
 {
     "success": true,
     "posts": [
