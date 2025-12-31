@@ -359,6 +359,7 @@ Request Body
   "dateOfBirth": "2001-05-10",
   "address": "Jupudi,Amaravati,Guntur,AP-522436"
 }
+
 success response
 
 {
