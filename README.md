@@ -274,8 +274,73 @@ success response
     }
 }
 ```
+### 3. `POST /https://api.ayrene.com/api/users/profile/by-by-email` - Getting profile by Email
 
-### 3. `PUT /https://api.ayrene.com/api/users/profile` - Update profile
+Description: Getting user through the email along with access token.
+
+#### 🔸 Headers
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
+
+```json
+{
+    "email": "kusuma7dev@gmail.com"
+}
+
+success response
+
+{
+    "profile": {
+        "_id": "6932bc503d76faaaee7b413e",
+        "username": "Kusuma",
+        "email": "kusuma7dev@gmail.com",
+        "avatar": "",
+        "gender": "female",
+        "dateOfBirth": "2001-05-10T00:00:00.000Z",
+        "address": "Jupudi,Amaravati,Guntur,AP-522436",
+        "onlineStatus": "online",
+        "lastSeen": "2025-12-29T17:41:47.292Z",
+        "profileId": 699
+    }
+}
+```
+
+### 4. `POST /https://api.ayrene.com/api/users/profile/by-profileId` - Getting profile by ProfileId
+
+Description: Getting user through the email along with access token.
+
+#### 🔸 Headers
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
+
+```json
+{
+    "profileId": "699"
+}
+
+success response
+
+{
+    "profile": {
+        "_id": "6932bc503d76faaaee7b413e",
+        "username": "Kusuma",
+        "email": "kusuma7dev@gmail.com",
+        "avatar": "",
+        "gender": "female",
+        "dateOfBirth": "2001-05-10T00:00:00.000Z",
+        "address": "Jupudi,Amaravati,Guntur,AP-522436",
+        "onlineStatus": "online",
+        "lastSeen": "2025-12-29T17:41:47.292Z",
+        "profileId": 699
+    }
+}
+```
+
+### 5. `PUT /https://api.ayrene.com/api/users/profile` - Update profile
 
 Description: Updating profile through giving an extra information.
 
@@ -315,7 +380,7 @@ success response
 }
 ```
 
-### 4. `PUT /https://api.ayrene.com/api/users/status` - Giving status
+### 6. `PUT /https://api.ayrene.com/api/users/status` - Giving status
 
 Description: Giving the status to the user .
 
