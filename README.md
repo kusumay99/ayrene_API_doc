@@ -740,7 +740,7 @@ success response
 ## Posts API Documentation
 
 
-### 1. `POST /https://api.ayrene.com/api/posts`
+### 1. `POST /https://api.ayrene.com/api/posts/create` - Create post  
 
 Description: Post a posts.
 
@@ -776,16 +776,15 @@ success response
 }
 ```
 
-### 2. `POST /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/like`
+### 2. `POST /https://api.ayrene.com/api/posts/like`
 
 Description: Liking a post by using post_id.
 
 Request Body
+
 ```json
 {
-  "title": "Morning Whishes",
-  "description": "Whishes",
-  "content": "Hello Friends a very good morning"
+  "postId": "693615f43d76faaaee7b41c3
 }
 
 success response
@@ -830,16 +829,14 @@ success response
 }
 ```
 
-### 3. `POST /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/comment`
+### 3. `POST /https://api.ayrene.com/api/posts/comment`
 
 Description: Giving comment a post by using post_id.
 
 Request Body
 ```json
 {
-  "title": "Morning Whishes",
-  "description": "Whishes",
-  "content": "Hello Friends a very good morning"
+  "postId": "693615f43d76faaaee7b41c3",
   "text": "Nice Post"
 }
 
@@ -862,7 +859,7 @@ success response
 }
 ```
 
-### 4. `GET /https://api.ayrene.com/api/posts/my-posts`
+### 4. `POST /https://api.ayrene.com/api/posts/my-posts`
 
 Description: Getting existing post with that login profile.
 
@@ -925,7 +922,7 @@ success response
 }
 ```
 
-### 5. `PUT /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
+### 5. `PUT /https://api.ayrene.com/api/posts/update`
 
 Description: Updating a post by giving an extra information.
 
@@ -937,7 +934,8 @@ Description: Updating a post by giving an extra information.
 
 ```json
 {
-  "content": "Hello Friends a very good morning. A very sweet message fron your friend"
+"postId": "693615f43d76faaaee7b41c3",
+"content": "Hello Friends a very good morning. A very sweet message fron your friend"
 }
 
 success response
@@ -976,7 +974,7 @@ success response
 }
 ```
 
-### 6. `GET /https://api.ayrene.com/api/posts`
+### 6. `GET /https://api.ayrene.com/api/posts/list`
 
 Description: Getting all the posts.
 
@@ -1038,7 +1036,7 @@ success response
 }
 ```
 
-### 7. `DELETE /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3/comment/693619c33d76faaaee7b41d8`
+### 7. `PUT /https://api.ayrene.com/api/posts/delete-comment`
 
 Description: Deleting comment from the post.
 
@@ -1049,14 +1047,20 @@ Description: Deleting comment from the post.
 #### We can get Access token from Login API 
 
 ```json
+{
+  "postId": "693615f43d76faaaee7b41c3",
+  "commentId": "693619c33d76faaaee7b41d8`"
+}
+
 success response
+
 {
     "success": true,
     "message": "Comment deleted successfully"
 }
 ```
 
-### 9. `DELETE /https://api.ayrene.com/api/posts/693615f43d76faaaee7b41c3`
+### 9. `PUT /https://api.ayrene.com/api/posts/delete`
 
 Description: Deleting a post by post_id.
 
@@ -1067,8 +1071,12 @@ Description: Deleting a post by post_id.
 #### We can get Access token from Login API 
 
 ```json
+{
+  "postId": "693615f43d76faaaee7b41c3"
+}
 
 success response
+
 {
     "success": true,
     "message": "Post deleted successfully"
