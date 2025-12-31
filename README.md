@@ -81,7 +81,7 @@ Success Response
 ```
 ### 3. `POST /https://api.ayrene.com/api/auth/refresh` — Refresh Token
 
-Description: Giving refresh token we can get access and request token as well. We can get accessToken from login end point. By copying from login end point at the header in the authorization section we need to select Bearer Token after that we need to paste access token. Let's coming to body section pick raw body select JSON file paste refresh token as shown in below. After sending request from post man will get success response. 
+Description: Giving refresh token we can get access.
 
 #### 🔸 Headers
 
