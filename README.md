@@ -412,7 +412,7 @@ success response
 
 ### 1. `POST /https://api.ayrene.com/api/messages/send` - Send Message
 
-Description: Sending a message from sender to reciever.
+Description: Sending a message from sender to reciever through receiverId
 
 Request Body
 ```json
@@ -452,11 +452,9 @@ success response
 }
 ```
 
-### 2. `PUT /https://api.ayrene.com/api/messages/mark-read/6935ce203d76faaaee7b4191` - Read Message
+### 2. `GET /https://api.ayrene.com/api/messages/conversation` - Getting conversations
 
-Description: Reading a mesage through reciver_id.
-
-Request Body
+Description: Getting conversation by using conversation Id.
 
 #### 🔸 Headers
 
@@ -466,36 +464,111 @@ Request Body
 
 ```json
 {
-    "content": "Hello John"
+    "conversationId": "6935d29c3d76faaaee7b41a0"
 }
 
 success response
 {
-    "message": "Messages marked as read"
+    "success": true,
+    "conversations": [
+        {
+            "_id": "6935d29c3d76faaaee7b41a0",
+            "participants": [
+                {
+                    "_id": "6932bc503d76faaaee7b413e",
+                    "username": "Kusuma",
+                    "avatar": "",
+                    "onlineStatus": "online",
+                    "lastSeen": "2025-12-31T03:58:00.543Z"
+                }
+            ],
+            "lastMessage": {
+                "_id": "69549fb3540bc5dad391a786",
+                "sender": "6932bc503d76faaaee7b413e",
+                "receiver": "6932bc503d76faaaee7b413e",
+                "messageType": "text",
+                "text": "Hello Kusuma",
+                "fileUrl": null,
+                "fileName": null,
+                "fileSize": null,
+                "status": "delivered",
+                "deliveredAt": "2025-12-31T04:02:56.134Z",
+                "readAt": null,
+                "isDeleted": false,
+                "deletedAt": null,
+                "createdAt": "2025-12-31T03:59:47.219Z",
+                "updatedAt": "2025-12-31T04:02:56.135Z",
+                "__v": 0
+            },
+            "unreadCount": {
+                "69240122e0963acdc6f09361": 2,
+                "6932bc503d76faaaee7b413e": 1
+            },
+            "lastMessageAt": "2025-12-31T03:59:47.219Z",
+            "createdAt": "2025-12-07T19:16:44.449Z",
+            "updatedAt": "2025-12-31T03:59:47.517Z",
+            "__v": 0
+        },
+        {
+            "_id": "6952bda0283ecf5a69169a5a",
+            "participants": [
+                {
+                    "_id": "6932bc503d76faaaee7b413e",
+                    "username": "Kusuma",
+                    "avatar": "",
+                    "onlineStatus": "online",
+                    "lastSeen": "2025-12-31T03:58:00.543Z"
+                }
+            ],
+            "lastMessage": {
+                "_id": "6952bda0283ecf5a69169a57",
+                "sender": "6932bc503d76faaaee7b413e",
+                "receiver": "6952912bf75cbf27b2d6b574",
+                "messageType": "text",
+                "text": "Hello 🎉",
+                "fileUrl": null,
+                "fileName": null,
+                "fileSize": null,
+                "status": "sent",
+                "deliveredAt": null,
+                "readAt": null,
+                "isDeleted": false,
+                "deletedAt": null,
+                "createdAt": "2025-12-29T17:42:56.018Z",
+                "updatedAt": "2025-12-29T17:42:56.018Z",
+                "__v": 0
+            },
+            "unreadCount": {
+                "6952912bf75cbf27b2d6b574": 1
+            },
+            "lastMessageAt": "2025-12-29T17:42:56.018Z",
+            "createdAt": "2025-12-29T17:42:56.113Z",
+            "updatedAt": "2025-12-29T17:42:56.113Z",
+            "__v": 0
+        },
+        {
+            "_id": "69362c573d76faaaee7b4207",
+            "participants": [
+                {
+                    "_id": "6932bc503d76faaaee7b413e",
+                    "username": "Kusuma",
+                    "avatar": "",
+                    "onlineStatus": "online",
+                    "lastSeen": "2025-12-31T03:58:00.543Z"
+                }
+            ],
+            "lastMessage": null,
+            "unreadCount": {},
+            "lastMessageAt": "2025-12-08T01:39:35.895Z",
+            "createdAt": "2025-12-08T01:39:35.896Z",
+            "updatedAt": "2025-12-08T01:39:35.896Z",
+            "__v": 0
+        }
+    ]
 }
 ```
 
-### 3. `GET /https://api.ayrene.com/api/messages/conversation/6932bc503d76faaaee7b413e` - Getting conversations
-
-Description: Getting conversation by using user_id.
-
-#### 🔸 Headers
-
-#### Go to authorization -> Select Bearer Token -> Give Access Token
-
-#### We can get Access token from Login API 
-
-```json
-
-
-success response
-{
-    "messages": [],
-    "conversation": "6935d29c3d76faaaee7b41a0"
-}
-```
-
-### 4. `Post /https://api.ayrene.com/api/messages/send-file` - Sending File
+### 3. `Post /https://api.ayrene.com/api/messages/send-file` - Sending File
 
 Description: Send a file to receiver through receiverId.
 
@@ -547,9 +620,10 @@ success response
 }
 ```
 
-### 5. `GET /https://api.ayrene.com/api/messages/conversations` - Getting conversation
 
-Description: Getting  all conversations.
+### 4. `GET /https://api.ayrene.com/api/messages/messages` - Getting messages by UserId
+
+Description: Getting messages by userId.
 
 #### 🔸 Headers
 
@@ -558,6 +632,9 @@ Description: Getting  all conversations.
 #### We can get Access token from Login API 
 
 ```json
+{
+    "userId": "6932bc503d76faaaee7b413e"
+}
 
 success response
 {
@@ -627,6 +704,31 @@ success response
     ]
 }
 ```
+### 5. `PUT /https://api.ayrene.com/api/messages/mark-read` - Marking as read
+
+Description: Marking as read if messages as send
+
+#### 🔸 Headers
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
+
+Request Body
+
+```json
+{
+  "conversationUserId": "65ab1234abcd5678ef901234"
+}
+
+
+success response
+{
+    "success": true,
+    "message": "Messages marked as read"
+}
+```
+
 
 ## Posts API Documentation
 
