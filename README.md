@@ -24,9 +24,9 @@ Description: Register user by using Email, Password, profileId & username. In th
 Request Body
 ```json
 {
-   "email": "kusuma7dev@gmail.com",
+    "email": "kusumayekula0191@gmail.com",
     "password": "Kusuma@123",
-    "username": "Kusuma",
+    "username": "Kusuma Yekula",
     "profileId": "123"
 }
 
@@ -35,19 +35,13 @@ Success response
 {
     "message": "User registered successfully",
     "user": {
-        "username": "Kusuma",
-        "email": "kusuma7dev@gmail.com",
+        "id": "69548a3603343d3c3554da86",
+        "username": "Kusuma Yekula",
+        "email": "kusumayekula0191@gmail.com",
         "profileId": 123,
         "avatar": "",
         "gender": "prefer_not_to_say",
-        "dateOfBirth": null,
-        "address": "",
-        "onlineStatus": "offline",
-        "_id": "6932bc503d76faaaee7b413e",
-        "lastSeen": "2025-12-05T11:04:48.214Z",
-        "createdAt": "2025-12-05T11:04:48.214Z",
-        "updatedAt": "2025-12-05T11:04:48.466Z",
-        "__v": 0
+        "onlineStatus": "offline"
     },
     "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI2ODgsImV4cCI6MTc2NDkzMzU4OH0.LDo4HsZXCc5kkGTCEzshDwpIpXP1iKH1onzVWUlMpaY",
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI2ODgsImV4cCI6MTc2NTUzNzQ4OH0.iiU78i81U_E6dUE5G5vabgvavOafJp4KftABsYhT4ZI"
@@ -68,24 +62,20 @@ Request Body
 Success Response
 
 {
+    {
+    "success": true,
     "message": "Login successful",
     "user": {
-        "_id": "6932bc503d76faaaee7b413e",
-        "username": "Kusuma",
-        "email": "kusuma7dev@gmail.com",
+        "id": "69548a3603343d3c3554da86",
+        "username": "Kusuma Yekula",
+        "email": "kusumayekula0191@gmail.com",
         "profileId": 123,
         "avatar": "",
         "gender": "prefer_not_to_say",
-        "dateOfBirth": null,
-        "address": "",
-        "onlineStatus": "online",
-        "lastSeen": "2025-12-05T11:04:48.214Z",
-        "createdAt": "2025-12-05T11:04:48.214Z",
-        "updatedAt": "2025-12-05T11:07:35.336Z",
-        "__v": 0
+        "onlineStatus": "online"
     },
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI4NTUsImV4cCI6MTc2NDkzMzc1NX0.nrjKKvCJ8fEu3NpWd08QCATDnUkAF_45VaK65vSUU88",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI4NTUsImV4cCI6MTc2NTUzNzY1NX0.Lgv1de1PtGPSOrr4sOEaw8PtdZbHCBhO4D46L9n_5vM"
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU0OGEzNjAzMzQzZDNjMzU1NGRhODYiLCJpYXQiOjE3NjcxNDgzOTQsImV4cCI6MTc2NzE0OTI5NH0.-Q3EA9G6cuzkXd7jHteRkueLH9359wBmP3nDHlnPimE",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU0OGEzNjAzMzQzZDNjMzU1NGRhODYiLCJpYXQiOjE3NjcxNDgzOTQsImV4cCI6MTc2Nzc1MzE5NH0.yKHQapT3lLfSOmOsuO3KEQ9tYSCTWmQYKdD9A3e_Gy0"
 }
 
 ```
@@ -117,37 +107,33 @@ Successful Response
 
 ### 4. `GET /https://api.ayrene.com/api/auth/me` - My-profile
 
-Description: Get our profile details by giving Access token. After getting access Token from login end point we need to give this acces token at the header in the authorization section after selection Bearer token. Let's coming to body section email Id and password is the mandatory feilds. After sending request from postman we will get success response.
+Description: Get our profile details by giving Access token. After getting access Token from login end point we need to give this acces token at the header in the authorization section after selection Bearer token. 
 
-Request body
+
 #### 🔸 Headers
 
 #### Go to authorization -> Select Bearer Token -> Give Access Token
 
 #### We can get Access token from Login API 
 
+Request body
+
 ```json
-{
-  "email": "kusuma7dev@gmail.com",
-    "password": "Kusuma@123"
-}
 
 success response
 
 {
     "user": {
-        "_id": "6932bc503d76faaaee7b413e",
-        "username": "Kusuma",
-        "email": "kusuma7dev@gmail.com",
+        "_id": "69548a3603343d3c3554da86",
+        "username": "Kusuma Yekula",
+        "email": "kusumayekula0191@gmail.com",
         "profileId": 123,
         "avatar": "",
         "gender": "prefer_not_to_say",
-        "dateOfBirth": null,
-        "address": "",
         "onlineStatus": "online",
-        "lastSeen": "2025-12-05T11:42:28.954Z",
-        "createdAt": "2025-12-05T11:04:48.214Z",
-        "updatedAt": "2025-12-05T11:51:01.895Z",
+        "lastSeen": "2025-12-31T02:57:00.608Z",
+        "createdAt": "2025-12-31T02:28:06.096Z",
+        "updatedAt": "2025-12-31T02:57:00.608Z",
         "__v": 0
     }
 }
@@ -157,7 +143,30 @@ success response
 
 Description: Logout profile by using Access token only.
 
+#### 🔸 Headers
+
+#### Go to authorization -> Select Bearer Token -> Give Access Token
+
+#### We can get Access token from Login API 
+
 Request body
+
+```json
+{
+    "email": "kusumayekula0191@gmail.com",
+    "password": "Kusuma@123"
+}
+
+success response
+
+{
+    "message": "Logout successful"
+}
+```
+
+### 6. `POST /https://api.ayrene.com/api/auth/delete-by-profileId` - Delete profile by ProfileId
+
+Description: Delete profile by profileId using ProfileId.
 
 #### 🔸 Headers
 
@@ -165,12 +174,19 @@ Request body
 
 #### We can get Access token from Login API 
 
+Request body
+
 ```json
+
+{
+    "profileId": "123"
+}
 
 success response
 
 {
-    "message": "Logout successful"
+    "success": true,
+    "message": "User deleted successfully"
 }
 ```
 
@@ -226,7 +242,7 @@ success response
     ]
 }
 ```
-### 2. `GET /https://api.ayrene.com/api/users/6932bc503d76faaaee7b413e` - User by ID
+### 2. `POST /https://api.ayrene.com/api/users/profile/by-user-id` - Getting profile by User by ID
 
 Description: Getting user through the user_id along with access token.
 
@@ -237,23 +253,24 @@ Description: Getting user through the user_id along with access token.
 #### We can get Access token from Login API 
 
 ```json
+{
+    "userId": "6932bc503d76faaaee7b413e"
+}
+
 success response
 
 {
-    "message": "Profile updated successfully",
-    "user": {
+    "profile": {
         "_id": "6932bc503d76faaaee7b413e",
         "username": "Kusuma",
         "email": "kusuma7dev@gmail.com",
         "avatar": "",
-        "gender": "prefer_not_to_say",
-        "dateOfBirth": null,
-        "address": "",
+        "gender": "female",
+        "dateOfBirth": "2001-05-10T00:00:00.000Z",
+        "address": "Jupudi,Amaravati,Guntur,AP-522436",
         "onlineStatus": "online",
-        "lastSeen": "2025-12-05T11:42:28.954Z",
-        "createdAt": "2025-12-05T11:04:48.214Z",
-        "updatedAt": "2025-12-05T14:11:30.695Z",
-        "__v": 0
+        "lastSeen": "2025-12-29T17:41:47.292Z",
+        "profileId": 699
     }
 }
 ```
@@ -323,31 +340,7 @@ success response
 }
 ```
 
-### 5. `POST /https://api.ayrene.com/api/users/uploads/avatar` - Upload Avatar
 
-Description: Uploading an avatar .
-
-Request Body
-#### 🔸 Headers
-
-#### Go to authorization -> Select Bearer Token -> Give Access Token
-
-#### We can get Access token from Login API 
-
-```json
-{
- 
-     "_id": "6932bc503d76faaaee7b413e",
-     "status": "online"
-}
-
-success response
-
-{
-     "message": "Status updated successfully",
-    "status": "online"
-}
-```
 
 ## Messages API Documentation
 
