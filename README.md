@@ -165,9 +165,9 @@ success response
 }
 ```
 
-### 6. `POST /https://api.ayrene.com/api/auth/delete-by-profileId` - Delete profile by ProfileId
+### 6. `POST /https://api.ayrene.com/api/auth/delete-by-email` - Delete profile by Email
 
-Description: Delete profile by profileId using ProfileId.
+Description: Delete profile by profileId using Email.
 
 #### 🔸 Headers
 
@@ -180,7 +180,7 @@ Request body
 ```json
 
 {
-    "profileId": "123"
+    "email": "kusuma7@gmail.com"
 }
 
 success response
