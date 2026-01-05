@@ -457,7 +457,7 @@ success response
 }
 ```
 
-### 2. `GET /https://api.ayrene.com/api/messages/conversations` - Getting conversations
+### 2. `POST /https://api.ayrene.com/api/messages/conversations` - Getting conversations
 
 Description: Getting conversation by using conversation Id.
 
