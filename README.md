@@ -422,7 +422,7 @@ Request Body
 ```json
 {
   "receiverId": "69240122e0963acdc6f09361",
-  "content": "Hello John"
+  "text": "Hello John"
 }
 
 success response
@@ -457,7 +457,7 @@ success response
 }
 ```
 
-### 2. `GET /https://api.ayrene.com/api/messages/conversation` - Getting conversations
+### 2. `GET /https://api.ayrene.com/api/messages/conversations` - Getting conversations
 
 Description: Getting conversation by using conversation Id.
 
