@@ -165,7 +165,7 @@ success response
 }
 ```
 
-### 6. `POST /https://api.ayrene.com/api/auth/delete-by-email` - Delete profile by Email
+### 6. `DELETE /https://api.ayrene.com/api/auth/delete-by-email` - Delete profile by Email
 
 Description: Delete profile by profileId using Email.
 
