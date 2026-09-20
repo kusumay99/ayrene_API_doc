@@ -15,7 +15,7 @@ https://api.ayrene.com
 ## Authentication API Documentation
 
 
-### 1. `POST /api/auth/send-otp` — Register User
+### 1. `POST /https://api.ayrene.com/api/auth/send-otp` — Register User
 
 Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
 
@@ -32,7 +32,7 @@ Success response
     "message": "OTP sent successfully"
 }
 ```
-### 2. `POST /api/auth/verify-otp` — Register User
+### 2. `POST /https://api.ayrene.com/api/auth/verify-otp` — Register User
 
 Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
 
