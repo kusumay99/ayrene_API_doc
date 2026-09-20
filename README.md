@@ -15,36 +15,48 @@ https://api.ayrene.com
 ## Authentication API Documentation
 
 
- ### 1. `POST /api/auth/register` — Register User
+### 1. `POST /api/auth/send-otp` — Register User
 
 Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
-
-
 
 Request Body
 ```json
 {
-    "email": "kusumayekula0191@gmail.com",
-    "password": "Kusuma@123",
-    "username": "Kusuma Yekula",
-    "profileId": "123"
+    "email": "kusumayekula019@gmail.com",
+    "username": "Kusuma Yekula"
 }
-
 Success response
 
 {
-    "message": "User registered successfully",
+    "success": true,
+    "message": "OTP sent successfully"
+}
+```
+### 2. `POST /api/auth/verify-otp` — Register User
+
+Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
+
+Request Body
+```json
+{
+    "email": "kusumayekula019@gmail.com",
+    "username": "Kusuma Yekula",
+    "otp": "679386",
+    "password": "Ykusuma@123"
+}
+Success response
+
+{
+    "success": true,
+    "message": "Account created successfully",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFlZTlkOWFhMzBjZTBlODMzZTczZjkiLCJpYXQiOjE3ODk5NDI5NzgsImV4cCI6MTc4OTk0Mzg3OH0.gjHcEF3t7u85p_y85ri08snfagaUW3PYzD4kUp2X6d0",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFlZTlkOWFhMzBjZTBlODMzZTczZjkiLCJpYXQiOjE3ODk5NDI5NzgsImV4cCI6MTc5MDU0Nzc3OH0.knQjDdKVVNsTcrwua41vglFEUZYW_bp8KJNZgiq7Ykc",
     "user": {
-        "id": "69548a3603343d3c3554da86",
+        "_id": "6aaee9d9aa30ce0e833e73f9",
+        "email": "kusumayekula019@gmail.com",
         "username": "Kusuma Yekula",
-        "email": "kusumayekula0191@gmail.com",
-        "profileId": 123,
-        "avatar": "",
-        "gender": "prefer_not_to_say",
-        "onlineStatus": "offline"
-    },
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI2ODgsImV4cCI6MTc2NDkzMzU4OH0.LDo4HsZXCc5kkGTCEzshDwpIpXP1iKH1onzVWUlMpaY",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTMyYmM1MDNkNzZmYWFhZWU3YjQxM2UiLCJpYXQiOjE3NjQ5MzI2ODgsImV4cCI6MTc2NTUzNzQ4OH0.iiU78i81U_E6dUE5G5vabgvavOafJp4KftABsYhT4ZI"
+        "profileId": 14
+    }
 }
 ```
 ### 2. `POST /https://api.ayrene.com/api/auth/login`— Log In
