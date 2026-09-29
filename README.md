@@ -14,6 +14,33 @@ https://api.ayrene.com
 
 ## Authentication API Documentation
 
+### 1. `POST /https://api.ayrene.com/api/auth/register` — Register User
+
+Description: Register user by using Email, Password, profileId & username. In this registration profileId is optional. It will generate from other platform.  
+
+Request Body
+```json
+{
+  "email": "test@gmail.com",
+  "username": "testuser",
+  "password": "Test@123456"
+}
+Success response
+
+{
+    "success": true,
+    "message": "Registration successful",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWJjNDgzYjE1MzgyYTMzZGY4NDJmZDMiLCJpYXQiOjE3OTA3MjQxNTUsImV4cCI6MTc5MDcyNTA1NX0.t10840cdRVGg3h_KUOkloIuj0FvqCoKJTZwzMGjxKrc",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWJjNDgzYjE1MzgyYTMzZGY4NDJmZDMiLCJpYXQiOjE3OTA3MjQxNTUsImV4cCI6MTc5MTMyODk1NX0.N2mjnm4OIfr034TY0B2YJXEsNKwJeo5aDEkmbfGOUjM",
+    "user": {
+        "_id": "6abc483b15382a33df842fd3",
+        "profileId": 16,
+        "username": "testuser",
+        "email": "test@gmail.com",
+        "isVerified": true
+    }
+}
+```
 
 ### 1. `POST /https://api.ayrene.com/api/auth/send-otp` — Register User
 
